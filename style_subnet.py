@@ -24,15 +24,15 @@ class StyleSubnet(nn.Module):
         self.togray.weight = w
 
         # RGB Block
-        self.rgb_conv1 = ConvLayer(3, 16, kernel_size=9, stride=1)
-        self.rgb_in1 = InstanceNormalization(16)
-        self.rgb_conv2 = ConvLayer(16, 32, kernel_size=3, stride=2)
-        self.rgb_in2 = InstanceNormalization(32)
-        self.rgb_conv3 = ConvLayer(32, 64, kernel_size=3, stride=2)
-        self.rgb_in3 = InstanceNormalization(64)
-        self.rgb_res1 = ResidualBlock(64)
-        self.rgb_res2 = ResidualBlock(64)
-        self.rgb_res3 = ResidualBlock(64)
+        self.rgb_conv1 = ConvLayer(3, 32, kernel_size=9, stride=1)
+        self.rgb_in1 = InstanceNormalization(32)
+        self.rgb_conv2 = ConvLayer(32, 64, kernel_size=3, stride=2)
+        self.rgb_in2 = InstanceNormalization(64)
+        self.rgb_conv3 = ConvLayer(64, 128, kernel_size=3, stride=2)
+        self.rgb_in3 = InstanceNormalization(128)
+        self.rgb_res1 = ResidualBlock(128)
+        self.rgb_res2 = ResidualBlock(128)
+        self.rgb_res3 = ResidualBlock(128)
 
         # L Block
         self.l_conv1 = ConvLayer(1, 16, kernel_size=9, stride=1)
@@ -46,12 +46,12 @@ class StyleSubnet(nn.Module):
         self.l_res3 = ResidualBlock(64)
 
         # Residual layers
-        self.res4 = ResidualBlock(128)
-        self.res5 = ResidualBlock(128)
-        self.res6 = ResidualBlock(128)
+        self.res4 = ResidualBlock(192)
+        self.res5 = ResidualBlock(192)
+        self.res6 = ResidualBlock(192)
 
         # Upsampling Layers
-        self.rezconv1 = ResizeConvLayer(128, 64, kernel_size=3, stride=1)
+        self.rezconv1 = ResizeConvLayer(192, 64, kernel_size=3, stride=1)
         self.in4 = InstanceNormalization(64)
         self.rezconv2 = ResizeConvLayer(64, 32, kernel_size=3, stride=1)
         self.in5 = InstanceNormalization(32)
