@@ -2,10 +2,10 @@
 ## Generalizing Fast Style Transfer to Several Genres
 ### Group 42:
 
-Elchanan Shuky Shukrun, ID: 308221126
+Elchanan Shuky Shukrun
 
-Mor Skurka, ID: 308466671
+Mor Skurka
 
-Yossi Dabush, ID: 305770729
+Yossi Dabush
 
-Adi Lampert, ID: 315963280
+Adi Lampert
